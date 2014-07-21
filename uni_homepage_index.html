@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+		<title> Rupert Small | Home</title>
+		<meta name="description" content="Rupert Small">
+		<meta name="description" content="Random Matrix Theory">
+		<meta name="description" content="Particle Diagrams">
+		<meta name="description" content="Many Body Statistics">
+		<meta name="description" content="Quantum Many Body Physics">
+		<meta name="description" content="Probability Distribution">
+		<meta name="description" content="Combinatorics">
+	</head>
+	<body style="background-color:#eeeeee;">
+		<div style="width:7.5in; margin: 0 auto; background-color:#ffffff; padding: .2in .5in .5in .5in">
+		<a name="top"><h3>Rupert Small | PhD Student</h3></a>
+		<p>I'm a PhD student in mathematics at the University of Bristol currently in my 3rd year. I study <a href="#rmt">Random Matrix Theory</a>, and use it to find physically interesting <a href="#pdfs">probability distributions</a>. Many of the methods used in Random Matrix Theory are very difficult, so I use <a href="#diagrams">particle diagrams</a> instead. Doing Random Matrix Theory with particle diagrams is easier, and you can find out some very <a href="#work">interesting results</a> too. Like me, you may find an incomplete list of living <a href="#researchers">Random Matrix Theory Researchers</a> useful. To contact me please use the email address at the bottom of this page.
+		</p>
+
+		<a name="pdfs"><h3>Probability Distributions</h3></a>
+		<p>Many things are completely random, so that rather than being able to predict a specific outcome, its only possible to determine which outcomes appear to occur more often, or less often. If you take alot of measurements, then your knowledge can still become quite accurate, even though the outcomes are random. By taking many measurements you can begin to draw a precise picture of which outcomes occur with a certain probability. The resulting picture is a probability distribution. For example if I count the number of ninjas I see on my way home I might notice that on some days its 16 ninjas while on others its only 2 ninjas. If I make careful notes of the number of ninjas I see every day, then over time I might be able to draw a graph like this<br><br>
+		
+		<img src="ninjas.png"></img>
+
+		<br><br>which tells me the probability that I meet a certain number of ninjas on any given day. So you can see that in my particular part of the country its highly likely that I'll see about 12 ninjas on my way home, but very unlikely I'll see a very low number of ninjas (e.g. 0 ninjas) or a very high number of ninjas (e.g. 25 ninjas). 
+		</p>
+
+		<a name="rmt"><h3>Random Matrix Theory</h3></a>
+		<p>Matrices are just arrays of numbers, organised nice and neat into a little box. Each number in the box will have a certain value, but if the value is random, then we call the matrix a Random Matrix. Since matrices can describe the outcome of physical measurements they are used by physicists and mathematicians - alot! An example of a \(3\times 3\) matrix is
+
+$$\left( \begin{array}{ccc}
+11 & 3 & 7 \\
+2 & 0 & 5 \\
+5 & 2 & 9 \end{array} \right)$$
+
+There are many ways to create a Random Matrix. To create a random \(3\times 3\) matrix for example, you could roll a dice 9 times and put the result of each roll into one of the entries of the matrix. If you rolled the dice alot and created a whole jungle full of \(3\times 3\) random matrices, then you would have created whats described as an \(ensemble\) of random matrices.
+
+		<a name="diagrams"><h3>Particle Diagrams</h3></a>
+		<p>There is a very beautiful connection between Random Matrices and particles. The connection comes about because groups of particles can interact in a very random fashion. When they do this the measurements that physicists make often look random. Taking lots of measurements sometimes allows them to discover patterns in the randomness, such as which kinds of interactions occur with higher probability and which kinds occur with lower probability. The result of all these measurements is that physicists can draw a probability distribution describing their measurements. To come up with theoretical predictions for their measurements its important to become really good at counting lots of particles, and counting the number of ways groups of particles can interact. Thats where particle diagrams come in. I let the diagram
+		
+		$$ \mu~ \_\_\_\_\_\_ ~ \nu$$
+
+		tell me that the sets \(\mu\) and \(\nu\) (which each have \(m\) single-particle states inside) share at least \((m-k)\) single-particle states, and I let the diagram
+
+		$$ \rho~ --- ~ \sigma$$
+
+		tell me that the sets  \(\rho\) and \(\sigma\) share at least \(k\) single-particle states. Now if the total set of all possible single-particle states is of size \(l\) then I can label all of them in a nice sequence \(1, 2, 3, \ldots, l\) and the number of ways I can choose a set \(\mu\) with \(m\) unique single-particle states inside is just
+
+		$$l\choose m $$
+
+		But this is just the beginning! I can ask lots of questions about the number of possible combinations for certain particle diagrams, such as how many states satisfy the diagram
+
+		$$ \mu~ \_\_\_\_\_\_ ~ \nu$$
+
+		Well, there are \(l\choose m\) ways to choose an \(m\)-set like \(\mu\) and since \(\nu\) must share \((m-k)\) of these we have the choice of \({{m}\choose{m-k}}\) different ways to take \((m-k)\) single-particle states from \(\mu\) to put into \(\nu\). Then, since \(\nu\) is made up of \(m\) single-particle states and we have only chosen \((m-k)\) of them so far, we can choose a further \(k\) unique states to put into \(\nu\) and there are \({{l - (m-k)}\choose{k}}\) ways of doing that. So the total number of ways to make the diagram  \(\mu~ \_\_\_\_\_\_ ~ \nu \) is in fact
+
+		$$ {l\choose m}{{m}\choose{m-k}}{{l - (m-k)}\choose{k}} $$
+
+		How about something even fancier? The diagram
+
+		$$ \mu~ \_\_\_\_\_\_ ~ \nu ~ --- ~ \sigma$$
+
+		is surely alot fancier. So how many ways are there to make this diagram? Again, there are \(l\choose m\) ways to choose an \(m\)-set like \(\mu\) and \({{m}\choose{m-k}}{{l - (m-k)}\choose{k}}\) ways to choose the corresponding \(\nu\) (as we saw with the first example). Now \(\sigma\) must share at least \(k\) of the single-particle states that are in \(\nu\) and there are \({m\choose k}\) ways to select them. Then, since \(\sigma\) is made up of \(m\) single-particle states and we have only chosen \(k\) of them so far, we can choose a further \((m-k)\) unique states to put into \(\sigma\) and there are \({{l - k}\choose{m-k}}\) ways of doing that. So the total number of ways to make the diagram  \(\mu~ \_\_\_\_\_\_ ~ \nu  ~ --- ~ \sigma\) is in fact
+
+		$$ {l\choose m}{{m}\choose{m-k}}{{l - (m-k)}\choose{k}}{m\choose k}{{l - k}\choose{m-k}} $$
+
+		So you can see that even for quite simple diagrams the expression is quite big. When using the diagrams to count combinations in Random Matrix Theory the diagrams are much bigger, and many are 3 dimensional! Still, if you have understood this far you have understood the fundamentals of particle diagrams and how they are used to count the number of combinations of certain relationships between groups of particles. 
+		</p>
+
+		<a name="work"><h3>Interesting Results (Own Work)</h3></a>
+		<p>
+		<ul>
+			<li><i><a href="bielefeld_IX_poster.pdf">Particle Diagrams & Random Matrix Theory</a>.</i> Poster presented at the IX Brunel-Bielefeld Workshop on Random Matrix Theory and its Applications, 17 Dec 2013.</li>
+			<li><i>Particle Diagrams and Embedded Many-Body Random Matrix Theory</i> [<a href="">Phys. Rev. E</a>] [<a href="">ArXiv</a>] [<a href="">PDF</a>] (links coming soon).</li>
+
+<li><i><a href="">Particle Diagrams Tutorial</a>.</i> A two minute introduction to particle diagrams on Vimeo (link coming soon).</li>
+		</ul>
+		</p>
+
+		<a name="researchers"><h3>RMT Researchers</h3></a>
+<div style="overflow-y:scroll;height:30em;scrollbar-shadow-color: #2D2C4D;scrollbar-highlight-color:#7D7E94;scrollbar-face-color: #000000;scrollbar-3dlight-color:#7D7E94;">
+		<table style="width: 100%">
+		<tr>
+<td><a href="http://www.indiana.edu/~alldrp/members/its.html">Alexander R. Its</a></td>
+<td><a href="https://www.math.ucdavis.edu/~soshniko/">Alexander Soshnikov</a></td>
+<td><a href="http://www.nottingham.ac.uk/mathematics/people/alexander.ossipov">Alexander Ossipov</a></td>
+</tr><tr>
+<td><a href="http://math.mit.edu/people/profile.php?pid=1222">Alexei Borodin</a></td>
+<td><a href="http://www.umpa.ens-lyon.fr/~aguionne/">Alice Guionnet</a></td>
+<td><a href="http://www.maths.bris.ac.uk/~maavm/">Anna Maltsev</a></td>
+</tr><tr>
+<td><a href="http://www.hse.ru/en/org/persons/35436251">Anton V. Zabrodin</a></td>
+<td><a href="https://perswww.kuleuven.be/~u0017946/">Arno Kuijlaars</a></td>
+<td><a href="http://www.hcm.uni-bonn.de/people/faculty/hausdorff-chairs/profile/benjamin-schlein/">Benjamin Schlein</a></td>
+</tr><tr>
+<td><a href="http://www.dmf.unisalento.it/~alpha/konope.html">Boris G. Konopelchenko</a></td>
+<td><a href="http://www.maths.qmul.ac.uk/~boris/">Boris Khoruzhenko</a></td>
+<td><a href="http://www.lorentz.leidenuniv.nl/beenakker/cv/cv.html">Carlo W. J. Beenakker</a></td>
+</tr><tr>
+<td><a href="http://lptms.u-psud.fr/christophe_texier/">Christophe Texier</a></td>
+<td><a href="http://www.quantware.ups-tlse.fr/dima/">Dima Shepelyansky</a></td>
+<td><a href="http://www.brunel.ac.uk/siscm/mathematical-sciences/people-in-maths/academic-staff/drdmitrysavin">Dmitry Savin</a></td>
+</tr><tr>
+<td><a href="http://www.lpt.ens.fr/?rubrique26&lang=fr">Edouard Brezin</a></td>
+<td><a href="http://www.hit.ac.il/acc/eugene.kanzieper/index.html">Eugene Kanzieper</a></td>
+<td><a href="http://www.its.caltech.edu/~strahov/index1.htm">Evgeny Strahov</a></td>
+</tr><tr>
+<td><a href="http://www.cmapx.polytechnique.fr/~benaych/">Florent Benaych-Georges</a></td>
+<td><a href="http://www.maths.bris.ac.uk/~mafm/">Francesco Mezzadri</a></td>
+<td><a href="http://www.math.uni-bielefeld.de/~goetze/">Friedrich Götze</a></td>
+</tr><tr>
+<td><a href="http://www.theo-phys.uni-essen.de/tp/ags/haake_dir/haake/">Fritz Haake</a></td>
+<td><a href="http://www.brunel.ac.uk/~mastgjr/">Geoff Rodgers</a></td>
+<td><a href="http://math.nyu.edu/faculty/benarous/">Gérard Ben Arous</a></td>
+</tr><tr>
+<td><a href="http://www2.physik.uni-bielefeld.de/akemann-contact.html">Gernot Akemann</a></td>
+<td><a href="http://www.sos.siena.edu/physics/People/Faculty_Profiles/Vernizzi,_Graziano/">Graziano Vernizzi</a></td>
+<td><a href="http://www.math.umn.edu/~gwanders/">Greg W. Anderson</a></td>
+</tr><tr>
+<td><a href="http://lptms.u-psud.fr/gregory-schehr/">Gregory Schehr</a></td>
+<td><a href="http://www.iitp.ru/en/users/88.htm">Grigori Olshanski</a></td>
+<td><a href="http://www.mpi-hd.mpg.de/mpi/en/weidenmueller/home/">Hans A. Weidenmüller</a></td>
+</tr><tr>
+<td><a href="http://www.theo.physik.uni-due.de/tp/ags/guhr_dir/members.php">Hans-Jürgen Sommers</a></td>
+<td><a href="http://www-m5.ma.tum.de/Allgemeines/HerbertSpohn">Herbert Spohn</a></td>
+<td><a href="http://www3.imperial.ac.uk/people/i.krasovsky">Igor Krasovsky</a></td>
+</tr><tr>
+<td><a href="http://www.brunel.ac.uk/siscm/mathematical-sciences/people-in-maths/academic-staff/drigorsmolyarenko">Igor Smolyarenko</a></td>
+<td><a href="http://physics.osu.edu/people/gruzberg">Ilya Gruzberg</a></td>
+<td><a href="http://cs.physics.sunysb.edu/">Jacobus J. M. Verbaarschot</a></td>
+</tr><tr>
+<td><a href="http://www.lpthe.jussieu.fr/~zuber/Z_ExpRec.html">Jean-bernard Zuber</a></td>
+<td><a href="https://www.cfm.fr/en/">Jean-Philippe Bouchaud</a></td>
+<td><a href="http://www.ma.rhul.ac.uk/jbolte">Jens Bolte</a></td>
+</tr><tr>
+<td><a href="http://ipht.cea.fr/Pisp/jeremie.bouttier/index_en.php">Jérémie Bouttier</a></td>
+<td><a href="http://csrc.if.uj.edu.pl/en/risk_staff_e.php?id=1">Jerzy Jurkiewicz</a></td>
+<td><a href="http://www.math.lsa.umich.edu/~baik/Welcome.html">Jinho Baik</a></td>
+</tr><tr>
+<td><a href="http://www.math.rutgers.edu/~lebowitz/">Joel Lebowitz</a></td>
+<td><a href="http://jpkeating.wordpress.com/">Jon Keating</a></td>
+<td><a href="http://chaos.if.uj.edu.pl/~karol/">Karol Zyczkowski</a></td>
+</tr><tr>
+<td><a href="http://www.nbi.dk/~split/">Kim Splittorff</a></td>
+<td><a href="http://www.math.kth.se/~kurtj/">Kurt Johansson</a></td>
+<td><a href="http://www.mathematik.uni-muenchen.de/~lerdos/">Laszlo Erdos</a></td>
+</tr><tr>
+<td><a href="http://www.mi.ras.ru/staff/chekhov_e.html">Leonid O. Checkov</a></td>
+<td><a href="http://www.ilt.kharkov.ua/bvi/structure/depart_e/d26/pastur.html">Leonid Pastur</a></td>
+<td><a href="http://wwwteor.mi.infn.it/~molinari/">Luca Guido Molinari</a></td>
+</tr><tr>
+<td><a href="http://www.cicc.unam.mx/~benet/">Luis Benet</a></td>
+<td><a href="https://www.cfm.fr/en/">Marc Potters</a></td>
+<td><a href="http://www.crm.umontreal.ca/~physmath/labweb/memberpage.php?member=bertola">Marco Bertola</a></td>
+</tr><tr>
+<td><a href="http://www.theo-phys.uni-essen.de/tp/ags/haake_dir/haake/">Mario Kieburg</a></td>
+<td><a href="http://people.brandeis.edu/~adler/">Mark Adler</a></td>
+<td><a href="http://homepages.lboro.ac.uk/~mamah/">Martin Hallnas</a></td>
+</tr><tr>
+<td><a href="http://www.thp.uni-koeln.de/zirn/">Martin Zirnbauer</a></td>
+<td><a href="http://www.math.kth.se/~duits/">Maurice Duits</a></td>
+<td><a href="http://www.princeton.edu/~aizenman/">Michael Aizenman</a></td>
+</tr><tr>
+<td><a href="http://www.maths.qmul.ac.uk/~phillips/">Michael J Phillips</a></td>
+<td><a href="http://www.math.univ-toulouse.fr/~capitain/">Mireille Capitaine</a></td>
+<td><a href="http://www2.warwick.ac.uk/fac/sci/maths/people/staff/neil_oconnell/">Neil O'Connell</a></td>
+</tr><tr>
+<td><a href="http://www.maths.qmul.ac.uk/people/nsimm">Nicholas Simm</a></td>
+<td><a href="http://www.math.ist.utl.pt/~norantin/research.html">Nicolas Orantin</a></td>
+<td><a href="http://www.maths.bris.ac.uk/~mancs/">Nina Snaith</a></td>
+</tr><tr>
+<td><a href="http://homepages.physik.uni-muenchen.de/~Oleg.Yevtushenko/">Oleg Yevtushenko</a></td>
+<td><a href="http://www2.warwick.ac.uk/fac/sci/maths/people/staff/oleg_zaboronski/">Oleg Zaboronski</a></td>
+<td><a href="http://wt.iam.uni-bonn.de/ferrari/home/">Patrik Ferrari </a></td>
+</tr><tr>
+<td><a href="http://physics.uchicago.edu/research/areas/condensed_t.html#Wiegmann">Paul Wiegmann</a></td>
+<td><a href="http://www.lpthe.jussieu.fr/~pzinn/">Paul Zinn-Justin</a></td>
+<td><a href="http://igk.math.uni-bielefeld.de/user/171">Pedro Vidal</a></td>
+</tr><tr>
+<td><a href="http://www.math.nyu.edu/faculty/deift/index.html">Percy Deift</a></td>
+<td><a href="https://www.math.ias.edu/people/faculty/sarnak">Peter Sarnak</a></td>
+<td><a href="http://ipht.cea.fr/en/Phocea/Pisp/visu.php?id=14">Philippe Di Francesco</a></td>
+</tr><tr>
+<td><a href="http://lptms.u-psud.fr/pierpaolo-vivo/">Pierpaolo Vivo</a></td>
+<td><a href="http://www.idc.lnt.de/en/mitarbeiter/hochschullehrer/prof-dr-ing-ralf-mueller/">Ralf Müller</a></td>
+<td><a href="http://www.mth.kcl.ac.uk/staff/r_kuehn.html">Reimer Kühn</a></td>
+</tr><tr>
+<td><a href="http://www.math.uni-sb.de/ag/speicher/speicher.html">Roland Speicher</a></td>
+<td><a href="https://www.ceremade.dauphine.fr/~allez/">Romain Allez</a></td>
+<td><a href="http://snu.edu.in/naturalsciences/Santosh_Kumar_profile.aspx">Santosh Kumar</a></td>
+</tr><tr>
+<td><a href="http://lptms.u-psud.fr/satya-majumdar/">Satya Majumdar</a></td>
+<td><a href="http://www.maths.bris.ac.uk/~maxsm/">Sebastian Müller</a></td>
+<td><a href="http://ee.princeton.edu/people/faculty/sergio-verd%C3%BA">Sergio Verdu</a></td>
+</tr><tr>
+<td><a href="http://www1.maths.leeds.ac.uk/~siru/">Simon Ruijsenaars</a></td>
+<td><a href="http://people.sissa.it/~grava/">Tamara Grava</a></td>
+<td><a href="http://www.math.nagoya-u.ac.jp/~nagao/nagaoeng.html">Taro Nagao</a></td>
+</tr><tr>
+<td><a href="http://www.theo-phys.uni-essen.de/tp/ags/guhr_dir/homepage.php?lang=en&u=guhr">Thomas Guhr</a></td>
+<td><a href="http://perso.uclouvain.be/tom.claeys/">Tom Claeys</a></td>
+<td><a href="https://www.math.ias.edu/people/faculty/spencer">Tom Spencer</a></td>
+</tr><tr>
+<td><a href="http://www.itp.ac.ru/en/persons/kravtsov-vladimir-evgenevich/">Vladimir E. Kravtsov</a></td>
+<td><a href="http://users.ictp.it/~kravtsov/">Vladimir Kravtsov</a></td>
+<td><a href="http://www.maths.qmul.ac.uk/~yan/">Yan V Fyodorov</a></td>
+</tr><tr>
+<td><a href="http://lptms.u-psud.fr/yasar-atas/">Yasar Atas</a></td>
+<td><a href="http://wwwth.itep.ru/mathphys/people/zabrodin/zabrodin.htm">Zabrodin Anton Vladimirovich</a></td>
+<td><a href="http://majson.nazwa.pl/ztuz/index.php?page=professor-zdzislaw-burda">Zdzislaw Burda</a></td>
+</tr><tr>
+<td><a href="http://www.math.tau.ac.il/~rudnick/">Zeev Rudnick</a></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</div>
+<br><br>
+The list is still young with additions to come, but please feel free to email suggestions or corrections to <b>Rupert</b> <i>dot</i> <b>Small</b> <i>at</i> <b>bristol</b> <i>dot</i> <b>ac</b> <i>dot</i> <b>uk</b>.
+
+	</div>
+	</body>
+</html>
+
+
